@@ -26,35 +26,49 @@ Cada usuario debe descargar la versión compatible con su propio navegador Edge:
 ```python
 service = Service(executable_path=r'C:\ruta\msedgedriver.exe')
 
-⚙️ Configuración previa
+### ⚙️ Configuración previa
+
 Antes de ejecutar el script, realiza los siguientes pasos de configuración:
 
-1.- Cambia la ruta del archivo Excel donde tienes los RUCs:
+1. **Cambia la ruta del archivo Excel** donde tienes los RUCs:
 
-df_ruc = pd.read_excel(r'C:\Users\tu_usuario\OneDrive\Escritorio\ruc_list.xlsx')
+   ```python
+   df_ruc = pd.read_excel(r'C:\Users\tu_usuario\OneDrive\Escritorio\ruc_list.xlsx')
+   ```
 
-2.- Cambia la ruta del WebDriver de Microsoft Edge:
+2. **Cambia la ruta del WebDriver de Microsoft Edge**:
 
-service = Service(executable_path=r'C:\Users\tu_usuario\Downloads\msedgedriver.exe')
+   ```python
+   service = Service(executable_path=r'C:\Users\tu_usuario\Downloads\msedgedriver.exe')
+   ```
 
-3.- Asegúrate de que tu archivo Excel tenga una columna llamada "RUC".
+3. **Asegúrate de que tu archivo Excel tenga una columna llamada `"RUC"`**.
 
-🚀 Ejecución
+> 💡 **Nota:** No necesitas crear el archivo `Estadohabido_varios.xlsx` manualmente. El script lo generará automáticamente al finalizar la ejecución, con toda la información extraída.
+
+---
+
+### 🚀 Ejecución
+
 Ejecuta el script con el siguiente comando en la terminal:
 
+```bash
 python scrape_sunat.py
-El navegador se abrirá automáticamente y procesará cada RUC uno por uno.
+```
 
-Al finalizar, se generará un archivo llamado Estadohabido_varios.xlsx con los resultados.
+- El navegador se abrirá automáticamente y procesará cada RUC uno por uno.
+- Al finalizar, se generará un archivo llamado `Estadohabido_varios.xlsx` con los resultados.
 
-📤 ¿Qué información se obtiene?
+---
+
+### 📤 ¿Qué información se obtiene?
+
 Por cada RUC consultado, se extrae la siguiente información desde SUNAT:
 
-- Número de RUC
-- Nombre o Razón Social
-- Nombre Comercial
-- Tipo de Contribuyente
-- Estado del Contribuyente
-- Condición del Contribuyente
+- Número de RUC  
+- Nombre o Razón Social  
+- Nombre Comercial  
+- Tipo de Contribuyente  
+- Estado del Contribuyente  
+- Condición del Contribuyente  
 - Domicilio Fiscal
-
